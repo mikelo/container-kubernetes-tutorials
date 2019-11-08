@@ -9,10 +9,11 @@ end=$'\e[0m'
 coffee=$'\xE2\x98\x95'
 coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
+
 ###### Variable section - START
-DOCKER_IMAGE_NAME=robipozzi/rpozzi-restaurants-ui
-DOCKER_IMAGE_VERSION=1.0
-DOCKER_CONTAINER_NAME=rpozzi-restaurants-ui
-DOCKER_CONTAINER_PORT=8085
+CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants-ui
+CONTAINER_IMAGE_VERSION=1.0
+CONTAINER_NAME=rpozzi-restaurants-ui
+CONTAINER_PORT=8085
 ANGULAR_DIST_DIR=dist/
 ###### Variable section - END
