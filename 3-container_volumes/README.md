@@ -3,7 +3,7 @@ This tutorial provides code to test and understand how persistence can be manage
 
 Containers are, by nature, inherently volatile, which means they do not persist state between subsequent runs of the container. Since persistence is mandatory for any non trivial application, container technologies obviously provide technical mechanisms to manage persistence through the usage of volumes (see, as an example, Docker official documentation https://docs.docker.com/storage/volumes/).
 
-The tutorial builds on previous ![Container environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment) by further extending NodeJs based web application to serve an HTML page and expose 6 endpoints:
+The tutorial builds on previous ![Container environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment) by further extending NodeJs based web application to serve an HTML page and expose 7 endpoints:
 * */healthz* endpoint - it returns a string, testing that the application is up and healthy
 * */restaurants* endpoint - it returns a list of restaurants in Json format
 * */dir* endpoint - it calls an endpoint that shows the upload directory, as defined by UPLOAD_DIR environment variable which has been injected in the application environment
