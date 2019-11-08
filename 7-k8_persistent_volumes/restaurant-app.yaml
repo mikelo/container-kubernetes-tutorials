@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-pv
+  namespace: default
 spec:
   replicas: 1
   selector:
