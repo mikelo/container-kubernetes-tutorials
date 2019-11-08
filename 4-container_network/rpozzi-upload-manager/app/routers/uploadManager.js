@@ -1,6 +1,7 @@
 // Add required modules
 var fs = require('fs-extra');
 var multer = require('multer');
+var propertyReader = require('../utils/propertyReader');
 // Read environment variables
 var uploadDir = process.env.UPLOAD_DIR;
 // Setup multipart upload configuration
@@ -29,9 +30,17 @@ module.exports = function(app, logger) {
         logger.info("/config endpoint called");
         var response = '<html><head><meta charset="utf-8"><title>Restaurants</title><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"></head>';
         response += '<body><h3>Configuration properties are: </h3>';
-
-        // TODO
         
+        // ########### START 
+        var properties = propertyReader.getProperties();
+        properties.forEach(element => {          
+            response += '<br><i>' + element[0] + " = " + element[1] + '</i>';
+        });
+        response += '<br>';
+        response += '<br><i>KeyStore Password = ' + process.env.KEYSTORE_PASSWORD + '</i>';
+        response += '</body></html>';
+        // ########### END
+
         response += '</body></html>';
         res.send(response);
     });

@@ -9,11 +9,12 @@ end=$'\e[0m'
 coffee=$'\xE2\x98\x95'
 coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
+
 ###### Variable section - START
-DOCKER_IMAGE_NAME=robipozzi/rpozzi-upload-manager
-DOCKER_IMAGE_VERSION=1.0
-DOCKER_CONTAINER_NAME=upload-manager-app
-DOCKER_CONTAINER_PORT=8084
+CONTAINER_IMAGE_NAME=robipozzi/rpozzi-upload-manager
+CONTAINER_IMAGE_VERSION=1.0
+CONTAINER_NAME=upload-manager-app
+CONTAINER_PORT=8084
 UPLOAD_DIR=/Users/robertopozzi/temp/upload
 UPLOAD_DIR_MOUNT=/tmp/upload
 ###### Variable section - END

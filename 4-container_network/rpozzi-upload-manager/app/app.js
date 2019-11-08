@@ -17,6 +17,14 @@ require("./routers/uploadManager")(app, logger);
 app.listen(PORT, function() {
 	logger.info("Current working directory = " + process.cwd());
 	logger.info("Upload directory from UPLOAD_DIR environment variable = " + process.env.UPLOAD_DIR);
+	// START - KEYSTORE_PASSWORD
+	var keystorePassword = process.env.KEYSTORE_PASSWORD;
+	if (keystorePassword == undefined) {
+		logger.info("No KEYSTORE_PASSWORD environment variable has been defined");
+	} else {
+		logger.info("KEYSTORE_PASSWORD environment variable is set to = " + keystorePassword);
+	}
+	// END - KEYSTORE_PASSWORD
 	logger.info("Application is listening on port " + (process.env.EXPOSED_PORT || PORT));
 });
 // ############ Common Functions

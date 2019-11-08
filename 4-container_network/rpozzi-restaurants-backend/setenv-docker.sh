@@ -9,11 +9,12 @@ end=$'\e[0m'
 coffee=$'\xE2\x98\x95'
 coffee3="${coffee} ${coffee} ${coffee}"
 ##### Terminal Colors - END
+
 ###### Variable section - START
-DOCKER_IMAGE_NAME=robipozzi/rpozzi-restaurants-backend
-DOCKER_IMAGE_VERSION=1.0
-DOCKER_CONTAINER_NAME=restaurant-backend-app
-DOCKER_CONTAINER_PORT=8083
-CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/docker-kubernetes-tutorials/4-docker_network/rpozzi-restaurants-backend/app/config
+CONTAINER_IMAGE_NAME=robipozzi/rpozzi-restaurants-backend
+CONTAINER_IMAGE_VERSION=1.0
+CONTAINER_NAME=restaurant-backend-app
+CONTAINER_PORT=8083
+CONFIG_DIR=/Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/4-container_network/rpozzi-restaurants-backend/app/config
 CONFIG_DIR_MOUNT=/config
 ###### Variable section - END

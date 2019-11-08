@@ -1,9 +1,9 @@
-source setenv.sh
-echo ${cyn}Removing $DOCKER_CONTAINER_NAME Docker container ...${end}
-docker rm -f $DOCKER_CONTAINER_NAME
+source setenv-docker.sh
+echo ${cyn}Removing $CONTAINER_NAME Docker container ...${end}
+docker rm -f $CONTAINER_NAME
 echo ${cyn}Docker container removed${end}
 echo
 echo ${cyn}Running Docker container ...${end}
-DOCKER_CMD_RUN="docker run -it --name $DOCKER_CONTAINER_NAME -p $DOCKER_CONTAINER_PORT:8083 -v $UPLOAD_DIR:$UPLOAD_DIR_MOUNT -e UPLOAD_DIR=$UPLOAD_DIR_MOUNT -e EXPOSED_PORT=$DOCKER_CONTAINER_PORT $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_VERSION"
-echo ${cyn}Running with:${end} ${grn}$DOCKER_CMD_RUN${end}
-$DOCKER_CMD_RUN
+CONTAINER_CMD_RUN="docker run -it --name $CONTAINER_NAME -p $CONTAINER_PORT:8083 -v $UPLOAD_DIR:$UPLOAD_DIR_MOUNT -e UPLOAD_DIR=$UPLOAD_DIR_MOUNT -e EXPOSED_PORT=$CONTAINER_PORT $CONTAINER_IMAGE_NAME:$CONTAINER_IMAGE_VERSION"
+echo ${cyn}Running with:${end} ${grn}$CONTAINER_CMD_RUN${end}
+$CONTAINER_CMD_RUN
