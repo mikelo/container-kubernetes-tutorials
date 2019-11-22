@@ -11,6 +11,7 @@ export class ErrorComponent implements OnInit {
   constructor(public errorService: ErrorService) { }
 
   ngOnInit() {
+
   }
 
 }

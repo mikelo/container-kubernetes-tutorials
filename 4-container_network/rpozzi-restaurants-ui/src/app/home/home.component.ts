@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RestaurantService } from '../restaurants/services/restaurant.service';
+import { RestaurantService } from '../restaurant/services/restaurant.service';
 import { UploadManagerService } from '../services/upload-manager.service';
 import { ErrorService } from '../error/services/error.service';
 import { MessageService } from '../messages/services/message.service';
@@ -9,6 +9,7 @@ import { MessageService } from '../messages/services/message.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   filesToUpload: Array<File> = [];
 

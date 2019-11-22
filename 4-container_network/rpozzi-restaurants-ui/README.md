@@ -1,45 +1,27 @@
-# Restaurants UI microservice
-This microservice, implemented in Angular, provides the UI component for Restaurant Management microservices application.
+# RpozziRestaurantsUi
 
-## Prerequisites
-Prerequisites are described in ![Container basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics#Prerequisites) paragraph.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
 
-## 1. Microservice demo scenario
-The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
+## Development server
 
-1. Start a terminal in your environment
-2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/4-container_network/rpozzi-restaurants-ui**
-4. Run *app-run.sh* script to launch the application
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-You can now test the application by running *http://localhost:XXXXX* .
+## Code scaffolding
 
-### 1.1. Running microservice as a Docker container
-A *Dockerfile* is provided to build and run the application as a Docker container. 
-First you need to build the container image by running the *docker build* command as follows:
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-**docker build -t robipozzi/rpozzi-restaurants-ui:1.0 .**
+## Build
 
-Once the Docker image is built, it can be run with the standard Docker run command: 
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-**docker run -it --name rpozzi-restaurants-ui -p 8085:80 robipozzi/rpozzi-restaurants-ui:1.0**
+## Running unit tests
 
-Once the Docker container is started, launch *http://localhost:8085* to test microservice behavior.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### 1.2. Running microservice as a cri-o container
+## Running end-to-end tests
 
-[TODO]
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## 2. Automation scripts available
-A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:
+## Further help
 
-### 2.1. Docker
-* *docker-build.sh* - it can be launched to build the Docker image; the script removes the Docker image from the local registry and re-builds it.
-* *docker-run.sh* - it can be launched to run Docker container locally; the script removes running container and runs a fresh container instance.
-* *docker-push.sh* - it can be launched to push the Docker image to Docker Hub. You will need to modify *$CONTAINER_IMAGE_NAME* parameter in *setenv-docker.sh* appropriately to push to the correct Docker Hub repository.
-
-All the relevant parameters are externalized and can be changed in *setenv-docker.sh* script.
-
-### 2.2. Buildah / Podman
-
-[TODO]
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

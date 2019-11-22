@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Restaurant } from './restaurant';
-import { RestaurantService } from './services/restaurant.service';
+import { RestaurantService } from '../restaurant/services/restaurant.service';
 import { ErrorService } from '../error/services/error.service';
 import { MessageService } from '../messages/services/message.service';
 
 @Component({
-  selector: 'app-restaurants',
-  templateUrl: './restaurants.component.html',
-  styleUrls: ['./restaurants.component.css']
+  selector: 'app-restaurant',
+  templateUrl: './restaurant.component.html',
+  styleUrls: ['./restaurant.component.css']
 })
-export class RestaurantsComponent implements OnInit {
+
+export class RestaurantComponent implements OnInit {
   public restaurants: Restaurant[] = [];
 
   constructor(private restaurantService: RestaurantService,
