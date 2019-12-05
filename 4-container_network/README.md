@@ -25,7 +25,7 @@ The present GitHub repository provides all the code and configuration files need
 1. Start a terminal in your environment
 2. If you haven't done already, download the files with the following command 
 
-*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+   * *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
 
 3. cd to *container-kubernetes-tutorials/4-container_network*
 [TODO]
