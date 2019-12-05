@@ -86,7 +86,7 @@ Once the command has run successfully you can open a browser to **http://<PUBLIC
 
 The command above will create all the necessary Kubernetes objects in your cluster:
 
-### Kubernetes Deployment
+### Deployment
 A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
 
@@ -98,7 +98,7 @@ The *restaurant-app.yaml* provided in this repository defines the Deployment for
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-deployment.png)
 
-### Kubernetes Service
+### Service
 A Service is the abstraction through which Kubernetes manages the incoming requests, routing to the appropriate Pods; it manages this by labelling Pods and by using label selectors so that a Service knows to which Pods to route. 
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/service/* for more information.
 
@@ -116,7 +116,7 @@ The *restaurant-app.yaml* provided in this repository defines a NodePort type of
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-service.png)
 
-### Kubernetes Ingress
+### Ingress
 An Ingress is a Kubernetes object that manages external access to the services in a cluster, typically HTTP/HTTPS. Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster, traffic routing is controlled by rules defined on the Ingress resource.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
 
@@ -139,7 +139,7 @@ Once you have authenticated to OpenShift cluster, as described in the *Red Hat O
 
 The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
 
-![Kubernetes Deployment](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Kubernetes Deployment)
+![Kubernetes Deployment](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Deployment)
 
 Once the command has run successfully, open a browser and do the following:
 1. Open the console and select *default* project
