@@ -23,8 +23,11 @@ Prerequisites are described in ![Container basics tutorial - Prerequisites](http
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application.
 
 1. Start a terminal in your environment
-2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/4-container_network**
+2. If you haven't done already, download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/4-container_network*
 [TODO]
 
 ## Automation scripts available

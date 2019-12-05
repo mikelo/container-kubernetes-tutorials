@@ -14,8 +14,11 @@ Prerequisites are described in ![Container basics tutorial - Prerequisites](http
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
 
 1. Start a terminal in your environment
-2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/2-container_environment**
+2. If you haven't done already, download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/2-container_environment*
 4. Run *app-run.sh* script to launch the application
 
 You can now test the application by running *http://localhost:8082* .
@@ -26,7 +29,7 @@ The application requires 2 environment variables, as it can be seen in the follo
 
 * one is called *UPLOAD_DIR*, and must be passed to the application by launching it with the following construct:
 
-**UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start**
+*UPLOAD_DIR="/Users/robertopozzi/temp/upload" npm start*
 
 * the other is called *EXPOSED_PORT* but it is not mandatory.
 
@@ -36,15 +39,15 @@ The *app-run.sh* script, available in the repository root folder, is provided to
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-**docker build -t robipozzi/rpozzi-restaurants:1.1 .**
+*docker build -t robipozzi/rpozzi-restaurants:1.1 .*
 
 Once the Docker image is built, it can be run with the standard Docker run command: 
 
-**docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
+*docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1*
 
 As it can be seen, an environment variable can be injected into a container with the following Docker construct:
 
-**-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>**
+*-e <ENV_VARIABLE_KEY>=<ENV_VARIABLE_VALUE>*
 
 Once the Docker container is started, launch *http://localhost:8083/dir* endpoint which will return the upload directory used by application, as shown in the following snapshot:
 
@@ -56,11 +59,11 @@ You can restart Docker container by changing *<YOUR_UPLOAD_DIR>* in *-e UPLOAD_D
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
 First you need to build the container image by running the *buildah bud* command as follows:
 
-**buildah bud -t robipozzi/rpozzi-restaurants:1.1 .**
+*buildah bud -t robipozzi/rpozzi-restaurants:1.1 .*
 
 Once the container image is built, it can be run with the standard *podman run* command, as follows: 
 
-**podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1**
+*podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=<YOUR_UPLOAD_DIR> -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.1*
 
 As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 

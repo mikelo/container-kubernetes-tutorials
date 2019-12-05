@@ -13,8 +13,11 @@ Prerequisites are described in ![Container basics tutorial - Prerequisites](http
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
 
 1. Start a terminal in your environment
-2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/4-container_network/rpozzi-upload-manager**
+2. If you haven't done already, download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/4-container_network/rpozzi-upload-manager*
 4. Run *app-run.sh* script to launch the application
 
 You can now test the application by running *http://localhost:8083* .
@@ -23,11 +26,11 @@ You can now test the application by running *http://localhost:8083* .
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-**docker build -t robipozzi/rpozzi-upload-manager:1.0 .**
+*docker build -t robipozzi/rpozzi-upload-manager:1.0 .*
 
 Once the Docker image is built, it can be run with the standard Docker run command: 
 
-**docker run -it --name upload-manager-app -p 8084:8083 -v /Users/robertopozzi/temp/upload:/tmp/upload -e UPLOAD_DIR=/tmp/upload -e KEYSTORE_PASSWORD=mycredentials -e EXPOSED_PORT=8084 robipozzi/rpozzi-upload-manager:1.0**
+*docker run -it --name upload-manager-app -p 8084:8083 -v /Users/robertopozzi/temp/upload:/tmp/upload -e UPLOAD_DIR=/tmp/upload -e KEYSTORE_PASSWORD=mycredentials -e EXPOSED_PORT=8084 robipozzi/rpozzi-upload-manager:1.0*
 
 Once the Docker container is started, launch *http://localhost:8084/<ENDPOINT>* to test microservice behavior, where 
 

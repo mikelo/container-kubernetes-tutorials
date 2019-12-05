@@ -36,8 +36,14 @@ You can have access to a Kubernetes cluster installation on IBM Cloud, here foll
 
 #### IBM Kubernetes Service authentication
 The *Access* section of your cluster describes how to connect and authenticate to your cluster; you basically need to:
-1. Start a terminal and authenticate to IBM Cloud with the following **ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>**
-2. Authenticate to the Kubernetes cluster with the following **ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>**
+1. Start a terminal and authenticate to IBM Cloud with the following 
+
+*ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>*
+
+2. Authenticate to the Kubernetes cluster with the following 
+
+*ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>*
+
 3. Export the **KUBECONFIG** environment variable as described in the *Access* section of your cluster
 
 The specific commands, with the correct values for your cluster are in the *Access* section of your cluster.
@@ -63,8 +69,13 @@ You can have access to a Red Hat OpenShift cluster installation on IBM Bluedemos
 All usernames and passwords that you will eventually need to work within the environment are available in *Lab01 Guide* that you can find in *https://bluedemos.com/show/2459* Home Page.
 
 #### Red Hat OpenShift authentication
-1. Open a Terminal and login to OpenShift cluster with the command **oc login -u admin -p Passw0rd!**
-2. Switch to *default* namespace (which, in OpenShift terms, is a *project*) with the command **oc project default**
+1. Open a Terminal and login to OpenShift cluster with the command 
+
+*oc login -u admin -p Passw0rd!*
+
+2. Switch to *default* namespace (which, in OpenShift terms, is a *project*) with the command 
+
+*oc project default*
 
 From now on you can use either **oc** or **kubectl** commands to interact with the OpenShift cluster.
 
@@ -72,15 +83,18 @@ From now on you can use either **oc** or **kubectl** commands to interact with t
 The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/1-container_basics).
 
 1. Start a terminal in your environment
-2. Download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/5-k8_basics**
+2. Download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/5-k8_basics*
 
 ### 1.1. Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
 
-**kubectl apply -f restaurant-app.yaml**
+*kubectl apply -f restaurant-app.yaml*
 
 Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31114** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
 
@@ -135,7 +149,7 @@ The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
 
-**kubectl apply -f ocp-restaurant-app.yaml**
+*kubectl apply -f ocp-restaurant-app.yaml*
 
 The command above will create the Deployment (see ![Kubernetes Deployment section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Deployment) for more details) and NodePort Service (see ![Kubernetes Service section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Service) for more details) objects in OpenShift cluster, allowing the application to run and be accessed.
 

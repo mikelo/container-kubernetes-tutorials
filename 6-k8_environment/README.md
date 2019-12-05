@@ -10,7 +10,10 @@ Prerequisites for the execution of this tutorial are described in ![Kubernetes b
 The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment).
 
 1. Start a terminal in your environment
-2. If you havent't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
+2. If you havent't done already, download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
 3. cd to **container-kubernetes-tutorials/6-k8_environment** 
 
 ### 1.1. Deploy and run application on IBM Kubernetes Service

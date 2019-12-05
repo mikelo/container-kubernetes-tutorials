@@ -19,8 +19,11 @@ To run the demo scenarios, the following software needs to be installed:
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
 
 1. Start a terminal in your environment
-2. Download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/1-container_basics**
+2. Download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/1-container_basics*
 4. Run *app-run.sh* script to launch the application
 
 You can now test the application by running *http://localhost:8082* .
@@ -29,21 +32,21 @@ You can now test the application by running *http://localhost:8082* .
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-**docker build -t robipozzi/rpozzi-restaurants:1.0 .**
+*docker build -t robipozzi/rpozzi-restaurants:1.0 .*
 
 Once the Docker image is built, it can be run with the standard Docker run command, as follows: 
 
-**docker run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0**
+*docker run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0*
 
 ### 1.2. Running application as a cri-o container
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
 First you need to build the container image by running the *buildah bud* command as follows:
 
-**buildah bud -t robipozzi/rpozzi-restaurants:1.0 .**
+*buildah bud -t robipozzi/rpozzi-restaurants:1.0 .*
 
 Once the container image is built, it can be run with the standard *podman run* command, as follows: 
 
-**podman run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0**
+*podman run -it --name restaurant-app -p 8083:8082 -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.0*
 
 ## 2. Automation scripts available
 A *Dockerfile* is provided to build and run the application as a container; plain standard OCI compliant commands (either Docker or Buildah/Podman) can be used to build the container image, push the container image to Docker Hub repository and run it as a container, the following scripts are provided for convenience:

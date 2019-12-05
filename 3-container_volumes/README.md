@@ -19,8 +19,11 @@ Prerequisites are described in ![Container basics tutorial - Prerequisites](http
 The present GitHub repository provides all the code and configuration files needed to run and test the Restaurant Management application. The application code is provided in */app* subfolder.
 
 1. Start a terminal in your environment
-2. If you haven't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
-3. cd to **container-kubernetes-tutorials/3-container_volumes**
+2. If you haven't done already, download the files with the following command 
+
+*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+
+3. cd to *container-kubernetes-tutorials/3-container_volumes*
 4. Run *app-run.sh* script to launch the application
 
 You can now test the application by running *http://localhost:8082* .
@@ -29,12 +32,12 @@ You can now test the application by running *http://localhost:8082* .
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-**docker build -t robipozzi/rpozzi-restaurants:1.2 .**
+*docker build -t robipozzi/rpozzi-restaurants:1.2 .*
 
 #### 1.1.1 Running Docker with no volume attached
 Once the container image is built, run the container with the following standard Docker run command, where */tmp/upload* is a folder inside the container filesystem (*docker-run-no-volume.sh* script is provided to automate this task avoiding errors): 
 
-**docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+*docker run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2*
 
 Explore application behavior by opening a web browser with URL *http://localhost:8083* and doing the following steps:
 1. upload some files from your local filesystem to *<UPLOAD_DIR>* folder by using the *Browse* and then *Upload your files* buttons
@@ -47,7 +50,7 @@ Explore application behavior by opening a web browser with URL *http://localhost
 #### 1.1.2. Running Docker with volumes
 To test how Docker can manage persistence through the usage of volumes, run a Docker container with the following standard Docker run command (change */Users/robertopozzi/temp/upload* to a folder available on your workstation), where */tmp/upload* is a folder inside the Docker container filesystem (*docker-run-with-volume.sh* script is provided to automate this task avoiding errors): 
 
-**docker run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+*docker run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2*
 
 Now run again the following steps:
 1. upload some files from your local filesystem to *<UPLOAD_DIR>* folder by using the *Browse* and then *Upload your files* buttons
@@ -61,17 +64,17 @@ Now run again the following steps:
 The same *Dockerfile* can be used to build and run the application as a cri-o container. 
 First you need to build the container image by running the *buildah bud* command as follows:
 
-**buildah bud -t robipozzi/rpozzi-restaurants:1.2 .**
+*buildah bud -t robipozzi/rpozzi-restaurants:1.2 .*
 
 #### 1.2.1. Running cri-o containers with no volume attached
 Once the container image is built, the same exact scenarios as described in the Docker paragraph can be tested by starting container with the standard *podman run* command, as follows (this command will run the container with no volumes attached): 
 
-**podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+*podman run -it --name restaurant-app -p 8083:8082 -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2*
 
 #### 1.2.2 Running cri-o containers with volumes
 Once you have finished the tests, stop the container by issuing CTRL+C in the terminal windows and then issue the following command to run the container with volumes attached:
 
-**podman run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2**
+*podman run -it --name restaurant-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/3-container_volumes/app/config:/config -v /Users/robertopozzi/temp/upload:/tmp/upload -e CONFIG_DIR=/config -e UPLOAD_DIR=/tmp/upload -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants:1.2*
 
 As it can be seen, the same exact construct used with Docker can be applied by using Buildah and Podman.
 
