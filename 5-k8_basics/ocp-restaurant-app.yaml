@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: restaurant-basic
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -28,6 +29,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: restaurant-basic-service
+  namespace: default
 spec:
   selector:
     app: restaurant

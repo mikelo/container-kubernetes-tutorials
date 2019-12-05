@@ -64,7 +64,7 @@ All usernames and passwords that you will eventually need to work within the env
 
 #### Red Hat OpenShift authentication
 1. Open a Terminal and login to OpenShift cluster with the command **oc login -u admin -p Passw0rd!**
-2. Switch to *demo* namespace (which, in OpenShift terms, is a *project*) with the command **oc project demo**
+2. Switch to *default* namespace (which, in OpenShift terms, is a *project*) with the command **oc project default**
 
 From now on you can use either **oc** or **kubectl** commands to interact with the OpenShift cluster.
 
@@ -140,7 +140,7 @@ Once you have authenticated to OpenShift cluster, as described in the *Red Hat O
 The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
 
 Once the command has run successfully, open a browser and do the following:
-1. Open the console and select *demo* project
+1. Open the console and select *default* project
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/ocp-console.png)
 

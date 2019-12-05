@@ -14,11 +14,21 @@ The present GitHub repository provides all the configuration files and scripts n
 3. cd to **container-kubernetes-tutorials/6-k8_environment** 
 
 ### 1.1. Deploy and run application on IBM Kubernetes Service
-The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
+The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *restaurant-app.yaml* files, provided in this repository define all the configurations needed to deploy and run the application in a Kubernetes cluster.
 
-Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
+Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following commands:
+
+**kubectl apply -f restaurant-configmap.yaml**
+
+The command above will create the ConfigMap that will be used by the application to externalize configuration keys.
+
+**kubectl apply -f restaurant-secret.yaml**
+
+The command above will create the Secret that externalizes sensitive information.
 
 **kubectl apply -f restaurant-app.yaml**
+
+The command above will create the Deployment and NodePort Service objects in Kubernetes cluster, allowing the application to run and be accessed.
 
 Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31115** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
 
@@ -76,16 +86,24 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 [TODO]
 
 ### 1.2. Deploy and run application on Red Hat OpenShift
-The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.
+The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *ocp-restaurant-app.yaml* files, provided in this repository define all the configurations needed to deploy and run the application in OpenShift cluster.
 
-Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
+Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following commands:
+
+**kubectl apply -f restaurant-configmap.yaml**
+
+The command above will create the ConfigMap that will be used by the application to externalize configuration keys.
+
+**kubectl apply -f restaurant-secret.yaml**
+
+The command above will create the Secret that externalizes sensitive information.
 
 **kubectl apply -f ocp-restaurant-app.yaml**
 
 The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
 
 Once the command has run successfully, open a browser and do the following:
-1. Open the console and select *demo* project
+1. Open the console and select *default* project
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/6-k8_environment/images/ocp-console.png)
 
@@ -93,19 +111,19 @@ Once the command has run successfully, open a browser and do the following:
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/6-k8_environment/images/ocp-application.png)
 
-3. Navigating to *restaurant-env-service* entry, notice how the service has been configured as a NodePort service, as expected
+3. Navigating to *restaurant-config-service* entry, notice how the service has been configured as a NodePort service, as expected
 
-[TODO] <image placeholder>
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/6-k8_environment/images/ocp-service.png)
 
 4. Open **http://master.ibm.demo:31115** url and test the application
 
 5. Optionally create a Route by clicking the *Create route* link, as described in the following snapshot
 
-[TODO] <image placeholder>
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/6-k8_environment/images/ocp-service2.png)
 
 6. Confirm all the defaults to create a route and associate to the NodePort Service, click on the Hostname field that has been created and test the application again
 
-[TODO] <image placeholder>
+![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/6-k8_environment/images/ocp-service2.png)
 
 #### Red Hat OpenShift Route
 An OpenShift route is a way to expose a service by giving it an externally-reachable hostname.
