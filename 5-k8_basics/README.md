@@ -139,6 +139,8 @@ Once you have authenticated to OpenShift cluster, as described in the *Red Hat O
 
 The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
 
+![Kubernetes Deployment](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Kubernetes Deployment)
+
 Once the command has run successfully, open a browser and do the following:
 1. Open the console and select *default* project
 
