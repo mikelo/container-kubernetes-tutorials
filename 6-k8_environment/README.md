@@ -12,24 +12,24 @@ The present GitHub repository provides all the configuration files and scripts n
 1. Start a terminal in your environment
 2. If you havent't done already, download the files with the following command 
 
-*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+   *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
 
-3. cd to **container-kubernetes-tutorials/6-k8_environment** 
+3. cd to *container-kubernetes-tutorials/6-k8_environment*
 
 ### 1.1. Deploy and run application on IBM Kubernetes Service
 The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *restaurant-app.yaml* files, provided in this repository define all the configurations needed to deploy and run the application in a Kubernetes cluster.
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following commands:
 
-**kubectl apply -f restaurant-configmap.yaml**
+*kubectl apply -f restaurant-configmap.yaml*
 
 The command above will create the ConfigMap that will be used by the application to externalize configuration keys.
 
-**kubectl apply -f restaurant-secret.yaml**
+*kubectl apply -f restaurant-secret.yaml*
 
 The command above will create the Secret that externalizes sensitive information.
 
-**kubectl apply -f restaurant-app.yaml**
+*kubectl apply -f restaurant-app.yaml*
 
 The command above will create the Deployment and NodePort Service objects in Kubernetes cluster, allowing the application to run and be accessed.
 
