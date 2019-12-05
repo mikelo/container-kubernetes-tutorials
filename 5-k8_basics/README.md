@@ -142,7 +142,7 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 
 ![](https://github.com/robipozzi/container-kubernetes-tutorials/blob/master/5-k8_basics/images/k8-ingress.png)
 
-**WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
+**WARNING**: the IBM Kubernetes Service that can be instantiated with IBM Cloud free tier has a limitation and does not support Ingress, nontheless the configuration has been provided for reference.
 
 ### 1.2. Deploy and run application on Red Hat OpenShift
 The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.
@@ -182,10 +182,10 @@ Please refer to OpenShift documentation *https://docs.openshift.com/enterprise/3
 
 ## 2. Automation scripts available for IBM Kubernetes Service
 A *restaurant-app.yaml* file is provided to deploy and run the application on IKS cluster and the following scripts are available:
-* *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes object
-* *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes object
+* *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes objects
+* *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes objects
 
 ## 3. Automation scripts available for Red Hat OpenShift
 A *ocp-restaurant-app.yaml* file is provided to deploy and run the application on OpenShift cluster and the following scripts are available:
-* *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift object
-* *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift object
+* *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift objects
+* *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift objects

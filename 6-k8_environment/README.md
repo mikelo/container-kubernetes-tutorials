@@ -33,20 +33,22 @@ The command above will create the Secret that externalizes sensitive information
 
 The command above will create the Deployment and NodePort Service objects in Kubernetes cluster, allowing the application to run and be accessed.
 
-Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31115** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
+Once the commands have run successfully you can open a browser to **http://<PUBLIC_IP>:31115** url and test the different application endpoints, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
 
-The command above will create all the necessary Kubernetes objects in your cluster:
+[TODO] XXXXXXXXXXXXXXXXXX
+
+The commands above will create all the following necessary Kubernetes objects in your cluster:
 
 ### Deployment
 A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
 
 The *restaurant-app.yaml* provided in this repository defines the Deployment for Restaurant Management application:
-* The Deployment name **restaurant-env**
+* The Deployment name **restaurant-config**
 * The Desired State **replicas: 1**, meaning that just one instance of the Pod must be running at all time
 * The **matchLabels** section defines which Pods will be managed by this Deployment object, the labels must exactly match the ones defined in the **labels** array in *template:metadata* section 
 * The container image **robipozzi/rpozzi-restaurants:1.1** the container in the Pod will be instantiated from; the image will be pulled from Docker Hub
-* Notice how an environment variable named **UPLOAD_DIR** can be passed to container
+* Notice how an environment variable named **UPLOAD_DIR** can be passed to a container, getting its value from the *upload_directory* key specified in a ConfigMap called *restaurant-configmap*
 
 [TODO] <image placeholder>
 
@@ -59,7 +61,7 @@ There are different types of Service in Kubernetes:
 * NodePort - it exposes a port on every Worker Nodes in the cluster and allows for external communication
 
 The *restaurant-app.yaml* provided in this repository defines a NodePort type of Service for Restaurant Management application, exposing port 31114 on the Kubernetes cluster nodes:
-* The Service name **restaurant-env-service**
+* The Service name **restaurant-config-service**
 * The **selector** section must exactly match the labels defined in the **labels** array in *template:metadata* section of the Deployment in order for the requests to be routed to the right Pods
 * The type of Service, which is **NodePort**
 * The **port** defines the port through which the Service can be accessed by other Service, internally
@@ -73,14 +75,14 @@ An Ingress is a Kubernetes object that manages external access to the services i
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
 
 The *restaurant-app.yaml* provided in this repository defines an Ingress for Restaurant Management 
-* The Ingress name **restaurant-env-ingress**
+* The Ingress name **restaurant-config-ingress**
 * The path **/restaurant** to which the Ingress responds
-* **serviceName** defines which Service the Ingress should route to, the value must match the Service name as defined before(in our case, **restaurant-env-service**)
+* **serviceName** defines which Service the Ingress should route to, the value must match the Service name as defined before(in our case, **restaurant-config-service**)
 * **servicePort** defines which port the Service shoud be contacted on, the value must match the **port** as defined before (in our case **9991**)
 
 [TODO] <image placeholder>
 
-**WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
+**WARNING**: the IBM Kubernetes Service that can be instantiated with IBM Cloud free tier has a limitation and does not support Ingress, nontheless the configuration has been provided for reference.
 
 ### ConfigMap
 [TODO]
@@ -133,11 +135,11 @@ An OpenShift route is a way to expose a service by giving it an externally-reach
 Please refer to OpenShift documentation *https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html* for more detailed information.
 
 ## 2. Automation scripts available for IBM Kubernetes Service
-A *restaurant-app.yaml* file is provided to deploy and run the application on IKS cluster and the following scripts are available:
-* *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes object
-* *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes object
+The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *restaurant-app.yaml* files are provided to deploy and run the application on IKS cluster and the following scripts are available:
+* *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes objects
+* *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes objects
 
 ## 3. Automation scripts available for Red Hat OpenShift
-A *ocp-restaurant-app.yaml* file is provided to deploy and run the application on OpenShift cluster and the following scripts are available:
-* *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift object
-* *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift object
+The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *ocp-restaurant-app.yaml* files are provided to deploy and run the application on OpenShift cluster and the following scripts are available:
+* *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift objects
+* *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift objects
