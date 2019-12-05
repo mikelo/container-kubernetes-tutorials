@@ -3,17 +3,17 @@ This tutorial provides the container image and the relative yaml configuration t
 
 The tutorial builds on previous container tutorial and uses **robipozzi/rpozzi-restaurants:1.1** container image, which has been built in ![Container environment variables tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment); the container image is available in Docker Hub (*https://hub.docker.com/*) publicly accessible registry (see *https://hub.docker.com/r/robipozzi/rpozzi-restaurants/tags*).
 
-## 1. Prerequisites
-Prerequisites for the execution of this tutorial are described in ![Kubernetes basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Prerequisites) paragraph.
+## Prerequisites
+Prerequisites for the execution of this tutorial are described in ![Kubernetes basics tutorial - Prerequisites](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Prerequisites) paragraph; please have a look at the info available in *Use IBM Kubernetes Service (IKS)* section on how to create, connect and authenticate to a Kubernetes *"vanilla"* cluster and/or *Use Red Hat OpenShift (RHOCP)* section on how to create, connect and authenticate to a RedHat OpenShift environment before starting this tutorial.
 
-## 2. Application demo scenario
+## 1. Application demo scenario
 The present GitHub repository provides all the configuration files and scripts needed to deploy and test the Restaurant Management application to Kubernetes, in the version previously developed in ![Container basics tutorial](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/2-container_environment).
 
 1. Start a terminal in your environment
 2. If you havent't done already, download the files with the following command **git clone https://github.com/robipozzi/container-kubernetes-tutorials.git**
 3. cd to **container-kubernetes-tutorials/6-k8_environment** 
 
-### 2.1. Deploy and run application on IBM Kubernetes Service
+### 1.1. Deploy and run application on IBM Kubernetes Service
 The *restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in Kubernetes cluster.
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
@@ -75,7 +75,7 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 ### Kubernetes Secret
 [TODO]
 
-### 2.2. Deploy and run application on Red Hat OpenShift
+### 1.2. Deploy and run application on Red Hat OpenShift
 The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the configurations needed to deploy and run the application in OpenShift cluster.
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
@@ -111,12 +111,12 @@ Once the command has run successfully, open a browser and do the following:
 An OpenShift route is a way to expose a service by giving it an externally-reachable hostname.
 Please refer to OpenShift documentation *https://docs.openshift.com/enterprise/3.0/architecture/core_concepts/routes.html* for more detailed information.
 
-## 3. Automation scripts available for IBM Kubernetes Service
+## 2. Automation scripts available for IBM Kubernetes Service
 A *restaurant-app.yaml* file is provided to deploy and run the application on IKS cluster and the following scripts are available:
 * *deploy.sh* - it can be launched to deploy the application by creating all the needed Kubernetes object
 * *delete.sh* - it can be launched to undeploy the application by deleting all the Kubernetes object
 
-## 4. Automation scripts available for Red Hat OpenShift
+## 3. Automation scripts available for Red Hat OpenShift
 A *ocp-restaurant-app.yaml* file is provided to deploy and run the application on OpenShift cluster and the following scripts are available:
 * *ocp-deploy.sh* - it can be launched to deploy the application by creating all the needed OpenShift object
 * *ocp-delete.sh* - it can be launched to undeploy the application by deleting all the OpenShift object
