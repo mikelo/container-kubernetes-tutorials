@@ -137,9 +137,7 @@ Once you have authenticated to OpenShift cluster, as described in the *Red Hat O
 
 **kubectl apply -f ocp-restaurant-app.yaml**
 
-The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
-
-![Kubernetes Deployment](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Deployment)
+The command above will create the Deployment (see ![Kubernetes Deployment section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Deployment) for more details) and NodePort Service (see ![Kubernetes Service section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Service) for more details) objects in OpenShift cluster, allowing the application to run and be accessed.
 
 Once the command has run successfully, open a browser and do the following:
 1. Open the console and select *default* project
