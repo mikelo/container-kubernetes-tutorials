@@ -21,15 +21,15 @@ The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *restaurant-app.ya
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following commands:
 
-*kubectl apply -f restaurant-configmap.yaml*
+* *kubectl apply -f restaurant-configmap.yaml*
 
 The command above will create the ConfigMap that will be used by the application to externalize configuration keys.
 
-*kubectl apply -f restaurant-secret.yaml*
+* *kubectl apply -f restaurant-secret.yaml*
 
 The command above will create the Secret that externalizes sensitive information.
 
-*kubectl apply -f restaurant-app.yaml*
+* *kubectl apply -f restaurant-app.yaml*
 
 The command above will create the Deployment and NodePort Service objects in Kubernetes cluster, allowing the application to run and be accessed.
 
@@ -93,15 +93,15 @@ The *restaurant-configmap.yaml*, *restaurant-secret.yaml* and *ocp-restaurant-ap
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following commands:
 
-**kubectl apply -f restaurant-configmap.yaml**
+* *kubectl apply -f restaurant-configmap.yaml*
 
 The command above will create the ConfigMap (see ![Kubernetes ConfigMap section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#ConfigMap) that will be used by the application to externalize configuration keys.
 
-**kubectl apply -f restaurant-secret.yaml**
+* *kubectl apply -f restaurant-secret.yaml*
 
 The command above will create the Secret (see ![Kubernetes Secret section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Secret) that externalizes sensitive information.
 
-**kubectl apply -f ocp-restaurant-app.yaml**
+* *kubectl apply -f ocp-restaurant-app.yaml*
 
 The command above will create the Deployment (see ![Kubernetes Deployment section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Deployment) and NodePort Service (see ![Kubernetes Service section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Service) objects in OpenShift cluster, allowing the application to run and be accessed.
 

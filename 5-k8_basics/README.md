@@ -38,11 +38,11 @@ You can have access to a Kubernetes cluster installation on IBM Cloud, here foll
 The *Access* section of your cluster describes how to connect and authenticate to your cluster; you basically need to:
 1. Start a terminal and authenticate to IBM Cloud with the following 
 
-*ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>*
+* *ibmcloud login -a cloud.ibm.com -r <YOUR_CLUSTER_REGION> -g <YOUR_CLUSTER_GROUP>*
 
 2. Authenticate to the Kubernetes cluster with the following 
 
-*ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>*
+* *ibmcloud ks cluster config --cluster <YOUR_CLUSTER_ID>*
 
 3. Export the **KUBECONFIG** environment variable as described in the *Access* section of your cluster
 
@@ -71,11 +71,11 @@ All usernames and passwords that you will eventually need to work within the env
 #### Red Hat OpenShift authentication
 1. Open a Terminal and login to OpenShift cluster with the command 
 
-*oc login -u admin -p Passw0rd!*
+* *oc login -u admin -p Passw0rd!*
 
 2. Switch to *default* namespace (which, in OpenShift terms, is a *project*) with the command 
 
-*oc project default*
+* *oc project default*
 
 From now on you can use either **oc** or **kubectl** commands to interact with the OpenShift cluster.
 
@@ -85,7 +85,7 @@ The present GitHub repository provides all the configuration files and scripts n
 1. Start a terminal in your environment
 2. Download the files with the following command 
 
-*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+   * *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
 
 3. cd to *container-kubernetes-tutorials/5-k8_basics*
 
@@ -94,7 +94,7 @@ The *restaurant-app.yaml* file, provided in this repository, defines all the con
 
 Once you have authenticated to Kubernetes cluster, as described in the *IBM Kubernetes Service authentication* section, you can just issue the following command
 
-*kubectl apply -f restaurant-app.yaml*
+* *kubectl apply -f restaurant-app.yaml*
 
 Once the command has run successfully you can open a browser to **http://<PUBLIC_IP>:31114** url and test the application, where <PUBLIC_IP> is the Public IP Address of your Kubernetes cluster, that you wrote down before. If you do not know <PUBLIC_IP> of your cluster, just issue the command **kubectl get node -o wide** and take note of EXTERNAL-IP.
 
@@ -149,7 +149,7 @@ The *ocp-restaurant-app.yaml* file, provided in this repository, defines all the
 
 Once you have authenticated to OpenShift cluster, as described in the *Red Hat OpenShift authentication* section, you can just issue the following command
 
-*kubectl apply -f ocp-restaurant-app.yaml*
+* *kubectl apply -f ocp-restaurant-app.yaml*
 
 The command above will create the Deployment (see ![Kubernetes Deployment section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Deployment) for more details) and NodePort Service (see ![Kubernetes Service section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/5-k8_basics#Service) for more details) objects in OpenShift cluster, allowing the application to run and be accessed.
 

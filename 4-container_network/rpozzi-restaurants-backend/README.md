@@ -12,7 +12,7 @@ The present GitHub repository provides all the code and configuration files need
 1. Start a terminal in your environment
 2. If you haven't done already, download the files with the following command 
 
-*git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+   * *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
 
 3. cd to *container-kubernetes-tutorials/4-container_network/rpozzi-restaurants-backend*
 4. Run *app-run.sh* script to launch the application
@@ -23,11 +23,11 @@ You can now test the application by running *http://localhost:8082/restaurants* 
 A *Dockerfile* is provided to build and run the application as a Docker container. 
 First you need to build the container image by running the *docker build* command as follows:
 
-*docker build -t robipozzi/rpozzi-restaurants-backend:1.0 .*
+* *docker build -t robipozzi/rpozzi-restaurants-backend:1.0 .*
 
 Once the Docker image is built, it can be run with the standard Docker run command: 
 
-*docker run -it --name restaurant-backend-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/4-container_network/rpozzi-restaurants-backend/app/config:/config -e CONFIG_DIR=/config -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants-backend:1.0*
+* *docker run -it --name restaurant-backend-app -p 8083:8082 -v /Users/robertopozzi/dev/robipozzi-kubernetes/container-kubernetes-tutorials/4-container_network/rpozzi-restaurants-backend/app/config:/config -e CONFIG_DIR=/config -e EXPOSED_PORT=8083 robipozzi/rpozzi-restaurants-backend:1.0*
 
 Once the Docker container is started, launch *http://localhost:8083/restaurants* to test microservice behavior.
 
