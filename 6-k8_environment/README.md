@@ -34,7 +34,7 @@ Once the command has run successfully you can open a browser to **http://<PUBLIC
 
 The command above will create all the necessary Kubernetes objects in your cluster:
 
-### Kubernetes Deployment
+### Deployment
 A Deployment is a Kubernetes object used to describe the characteristics and the desired state of an application component.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/workloads/controllers/deployment/* for more information and details.
 
@@ -47,7 +47,7 @@ The *restaurant-app.yaml* provided in this repository defines the Deployment for
 
 [TODO] <image placeholder>
 
-### Kubernetes Service
+### Service
 A Service is the abstraction through which Kubernetes manages the incoming requests, routing to the appropriate Pods; it manages this by labelling Pods and by using label selectors so that a Service knows to which Pods to route. 
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/service/* for more information.
 
@@ -65,7 +65,7 @@ The *restaurant-app.yaml* provided in this repository defines a NodePort type of
 
 [TODO] <image placeholder>
 
-### Kubernetes Ingress
+### Ingress
 An Ingress is a Kubernetes object that manages external access to the services in a cluster, typically HTTP/HTTPS. Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster, traffic routing is controlled by rules defined on the Ingress resource.
 Please refer to Kubernetes documentation *https://kubernetes.io/docs/concepts/services-networking/ingress/* for more information.
 
@@ -79,10 +79,10 @@ The *restaurant-app.yaml* provided in this repository defines an Ingress for Res
 
 **WARNING**: the IBM Kubernetes Service has a limitation and does not support Ingress, nontheless the configuration has been provided for reference
 
-### Kubernetes ConfigMap
+### ConfigMap
 [TODO]
 
-### Kubernetes Secret
+### Secret
 [TODO]
 
 ### 1.2. Deploy and run application on Red Hat OpenShift
@@ -92,15 +92,15 @@ Once you have authenticated to OpenShift cluster, as described in the *Red Hat O
 
 **kubectl apply -f restaurant-configmap.yaml**
 
-The command above will create the ConfigMap that will be used by the application to externalize configuration keys.
+The command above will create the ConfigMap (see ![Kubernetes ConfigMap section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#ConfigMap) that will be used by the application to externalize configuration keys.
 
 **kubectl apply -f restaurant-secret.yaml**
 
-The command above will create the Secret that externalizes sensitive information.
+The command above will create the Secret (see ![Kubernetes Secret section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Secret) that externalizes sensitive information.
 
 **kubectl apply -f ocp-restaurant-app.yaml**
 
-The command above will create the Deployment and NodePort Service objects in OpenShift cluster, allowing the application to run and be accessed.
+The command above will create the Deployment (see ![Kubernetes Deployment section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Deployment) and NodePort Service (see ![Kubernetes Service section](https://github.com/robipozzi/container-kubernetes-tutorials/tree/master/6-k8_environment#Service) objects in OpenShift cluster, allowing the application to run and be accessed.
 
 Once the command has run successfully, open a browser and do the following:
 1. Open the console and select *default* project
