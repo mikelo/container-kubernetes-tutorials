@@ -12,7 +12,7 @@ The present GitHub repository provides all the configuration files and scripts n
 1. Start a terminal in your environment
 2. If you havent't done already, download the files with the following command 
 
-   *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
+   * *git clone https://github.com/robipozzi/container-kubernetes-tutorials.git*
 
 3. cd to *container-kubernetes-tutorials/6-k8_environment*
 
